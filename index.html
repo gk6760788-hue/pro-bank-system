@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Pro Bank System</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="wrapper">
+
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+        <h2>🏦 ProBank</h2>
+        <button onclick="showDashboard()">Dashboard</button>
+        <button onclick="showTransfer()">Transfer</button>
+        <button onclick="showHistory()">History</button>
+        <button onclick="toggleTheme()">Dark/Light</button>
+        <button onclick="deleteAccount()">Delete Account</button>
+        <button onclick="logout()">Logout</button>
+    </div>
+
+    <!-- MAIN AREA -->
+    <div class="main">
+
+        <!-- LOGIN -->
+        <div id="authSection" class="card">
+            <h2>Login / Register</h2>
+            <input type="text" id="name" placeholder="Full Name (for Register)">
+            <input type="text" id="username" placeholder="Username">
+            <input type="password" id="password" placeholder="Password">
+            <input type="number" id="balance" placeholder="Initial Balance (Register)">
+            <button onclick="register()">Register</button>
+            <button onclick="login()">Login</button>
+        </div>
+
+        <!-- DASHBOARD -->
+        <div id="dashboard" class="card hidden">
+            <h2 id="welcome"></h2>
+            <div class="infoBox">
+                <p>Account No: <span id="accNo"></span></p>
+                <p>Balance: ₹<span id="balanceAmount"></span></p>
+            </div>
+        </div>
+
+        <!-- TRANSFER -->
+        <div id="transferSection" class="card hidden">
+            <h2>Transfer Money</h2>
+            <input type="text" id="toUser" placeholder="Recipient Username">
+            <input type="number" id="amount" placeholder="Amount">
+            <button onclick="transfer()">Send</button>
+        </div>
+
+        <!-- HISTORY -->
+        <div id="historySection" class="card hidden">
+            <h2>Transaction History</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Type</th>
+                        <th>User</th>
+                        <th>Amount</th>
+                    </tr>
+                </thead>
+                <tbody id="historyTable"></tbody>
+            </table>
+        </div>
+
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
